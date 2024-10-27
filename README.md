@@ -11,7 +11,7 @@ Overall, the flash accounting is relatively similar to the one in [Uniswap v4](h
 - unlocking (cooking) is not disallowed when another such operation is being perfomed (i.e. reentrancy is allowed)
 - access to functions changing flash accounting can be restricted by the `cook()` caller
 	- it means it is no longer users' responsibility not to make untrusted calls when flash accounting is active not to allow for reverts (although the action may cause a revert of the whole transaction if that separately valid action would cause a later under/overflow in storage balances due to new balance changes)
-- balance changes and total balance change are not restricted to `int128`s, the only real restriction is that any single operation must fit the amount in 256 bits and the filnal balance must fit in an `uint256`.
+- balance changes and total balance change are not restricted to `int128`s, the only real restriction is that any single operation must fit the amount in 256 bits and the final balance must fit in an `uint256`.
 
 ## Blueprints
 
@@ -57,5 +57,5 @@ If you want to contribute, you could:
 		- if yes, should we continue to calculate the GCD on chain?
 	- should we enforce that a basket token must have token ids sorted?
 		- if yes, should we do the sorting on chain?
-- figure how to merge liquidity across and extend the system to L2s & L3s without forcing users to take risks associated with chains irrelevant to their transaction, ideally without having to transact on mainnet
+- figure how to merge liquidity across (and extend the system to) L2s & L3s without forcing users to take risks associated with chains irrelevant to their transaction, ideally without having to transact on mainnet
 - consider whether basic wrappers should be created within the manager for efficiency or whether the manager should remain minimal for security reasons
