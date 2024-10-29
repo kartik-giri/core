@@ -59,3 +59,4 @@ If you want to contribute, you could:
 		- if yes, should we do the sorting on chain?
 - figure how to merge liquidity across (and extend the system to) L2s & L3s without forcing users to take risks associated with chains irrelevant to their transaction, ideally without having to transact on mainnet
 - consider whether basic wrappers should be created within the manager for efficiency or whether the manager should remain minimal for security reasons
+- consider a design where tokens of different ids could be put in a specific slot (for example storing `keccak256(abi.encode(tokenId, amount))` in a slot a merkle tree of such values), then completely updating a position modify a single slot instead of two slots, including a likely initialization of one and freeing of the other; this also enables Monad-like parallelization much easier
