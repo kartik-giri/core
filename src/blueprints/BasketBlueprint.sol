@@ -11,7 +11,8 @@ contract BasketBlueprint is BasicBlueprint {
 
 	constructor(IBlueprintManager manager) BasicBlueprint(manager) {}
 
-	function executeAction(bytes calldata action) external view onlyManager returns (
+	// the onlyManager modifier is removed because it's a pure function
+	function executeAction(bytes calldata action) external pure returns (
 		TokenOp[] memory /*mint*/,
 		TokenOp[] memory /*burn*/,
 		TokenOp[] memory /*give*/,

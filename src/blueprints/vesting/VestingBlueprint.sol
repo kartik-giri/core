@@ -11,9 +11,10 @@ contract VestingBlueprint is BasicBlueprint {
 	constructor(IBlueprintManager _blueprintManager)
 		BasicBlueprint(_blueprintManager) {}
 
+	// the onlyManager modifier is removed because it's a pure/view function
 	function executeAction(
 		bytes calldata action
-	) external view onlyManager returns (
+	) external view returns (
 		TokenOp[] memory /*mint*/,
 		TokenOp[] memory /*burn*/,
 		TokenOp[] memory /*give*/,
