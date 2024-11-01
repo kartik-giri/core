@@ -198,7 +198,7 @@ contract BlueprintManager is IBlueprintManager, FlashAccounting {
 
 		UserClue newUserClue = addUserDebitWithClue(userSession, userClue, id, amount);
 		if (UserClue.unwrap(userClue) != UserClue.unwrap(newUserClue))
-			saveUserClue(userSession, userClue);
+			saveUserClue(userSession, newUserClue);
 		_mint(msg.sender, id, amount);
 	}
 
@@ -234,7 +234,7 @@ contract BlueprintManager is IBlueprintManager, FlashAccounting {
 
 		UserClue newUserClue = addUserCreditWithClue(userSession, userClue, id, amount);
 		if (UserClue.unwrap(userClue) != UserClue.unwrap(newUserClue))
-			saveUserClue(userSession, userClue);
+			saveUserClue(userSession, newUserClue);
 		_burn(msg.sender, id, amount);
 	}
 
