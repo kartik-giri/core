@@ -30,7 +30,7 @@ interface IBlueprintManager {
 	///       via cook invoked by the user or their operator
 	function mint(address to, uint256 tokenId, uint256 amount) external;
 
-	/// @notice mints many tupes of tokens according to the `ops` array
+	/// @notice mints many types of tokens according to the `ops` array
 	/// @param to the address to mint to
 	/// @param ops the array of Blueprint's token ids and amounts to mint
 	/// @dev keep in mind that burning (inverting this action) is only possible
