@@ -20,7 +20,7 @@ The repo also contains several blueprints:
 - `ERC20Blueprint` – wraps ERC20 tokens into a token in the system; has ERC777 support
 - `VestingBlueprint` – creates vesting positions according to a custom vesting schedule
 	- `LinearCliffVestingSchedule` – a linear vesting schedule with a cliff
-- `BasketBlueprint` – allows for creation of baskets of tokens expressable by a single token
+- `BasketBlueprint` – allows for creation of baskets of tokens expressible by a single token
 
 ## Safety
 
