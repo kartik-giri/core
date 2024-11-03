@@ -69,10 +69,9 @@ contract BlueprintManager is IBlueprintManager, FlashAccounting {
 		uint256 id,
 		uint256 amount
 	) public virtual returns (bool) {
-		// todo: check if actually two ifs are executed. Should check the sender
-		// and potentially end the check before reading any state variables
-		if (msg.sender != sender && !isOperator[sender][msg.sender]) {
-			_decreaseApproval(sender, id, amount);
+		if (msg.sender != sender) {
+			if (!isOperator[sender][msg.sender])
+				_decreaseApproval(sender, id, amount);
 		}
 
 		_transferFrom(sender, receiver, id, amount);
