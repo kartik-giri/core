@@ -399,7 +399,6 @@ contract BlueprintManagerTest is Test {
 		bool setApproval,
 		bool setOperator
 	) public {
-		from = sender;
 		manager.mint(from, 0, amount);
 		uint256 id = HashLib.getTokenId(address(this), 0);
 
